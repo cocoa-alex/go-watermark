@@ -26,13 +26,19 @@ type CreatImage struct {
 }
 
 const (
-	TopLeftCorner, //左上角
-	TopRightCorner, //右上角
-	Middle, //居中
-	LowerLeftCorner, //左下角
-	LowerRightCorner //右下角
+	TopLeftCorner    = iota //左上角
+	TopRightCorner          //右上角
+	Middle                  //居中
+	LowerLeftCorner         //左下角
+	LowerRightCorner        //右下角
 )
 
-func (b *BasicImage) GetImage(path string) {
-	//
+func (b *BasicImage) GetBasicImage(path string) *BasicImage {
+	img := &BasicImage{
+		Path:   path,
+		Size:   100,
+		Suffix: "png",
+	}
+
+	return img
 }
